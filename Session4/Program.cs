@@ -17,6 +17,7 @@ namespace Session4
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmIventory());
+           
         }
     }
 }

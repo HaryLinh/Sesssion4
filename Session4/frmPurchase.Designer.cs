@@ -28,47 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbSupply = new System.Windows.Forms.ComboBox();
+            this.cboWareHouse = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.dataGird = new System.Windows.Forms.DataGridView();
+            this.PartName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BatchNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAddList = new System.Windows.Forms.Button();
+            this.txtAmount = new System.Windows.Forms.TextBox();
+            this.txtBatch = new System.Windows.Forms.TextBox();
+            this.cboPartName = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGird)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cbSupply
             // 
-            this.comboBox1.Enabled = false;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(30, 44);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(265, 21);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.Text = "...........";
+            this.cbSupply.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSupply.FormattingEnabled = true;
+            this.cbSupply.Location = new System.Drawing.Point(30, 44);
+            this.cbSupply.Name = "cbSupply";
+            this.cbSupply.Size = new System.Drawing.Size(265, 21);
+            this.cbSupply.TabIndex = 0;
             // 
-            // comboBox2
+            // cboWareHouse
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(392, 44);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(239, 21);
-            this.comboBox2.TabIndex = 1;
-            this.comboBox2.Text = ".............";
+            this.cboWareHouse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboWareHouse.FormattingEnabled = true;
+            this.cboWareHouse.Location = new System.Drawing.Point(392, 44);
+            this.cboWareHouse.Name = "cboWareHouse";
+            this.cboWareHouse.Size = new System.Drawing.Size(239, 21);
+            this.cboWareHouse.TabIndex = 1;
             // 
             // label1
             // 
@@ -97,61 +99,88 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Date";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(63, 91);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "/  /";
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.comboBox3);
+            this.groupBox1.Controls.Add(this.dataGird);
+            this.groupBox1.Controls.Add(this.btnAddList);
+            this.groupBox1.Controls.Add(this.txtAmount);
+            this.groupBox1.Controls.Add(this.txtBatch);
+            this.groupBox1.Controls.Add(this.cboPartName);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(12, 137);
+            this.groupBox1.Location = new System.Drawing.Point(12, 134);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(716, 197);
+            this.groupBox1.Size = new System.Drawing.Size(716, 200);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Part List";
             // 
-            // button1
+            // dataGird
             // 
-            this.button1.Location = new System.Drawing.Point(619, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Add to list";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dataGird.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGird.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PartName,
+            this.BatchNumber,
+            this.Amount});
+            this.dataGird.Location = new System.Drawing.Point(26, 69);
+            this.dataGird.Name = "dataGird";
+            this.dataGird.Size = new System.Drawing.Size(643, 125);
+            this.dataGird.TabIndex = 4;
+            this.dataGird.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGird_CellClick);
             // 
-            // textBox3
+            // PartName
             // 
-            this.textBox3.Location = new System.Drawing.Point(514, 30);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(85, 20);
-            this.textBox3.TabIndex = 2;
+            this.PartName.DataPropertyName = "PartName";
+            this.PartName.HeaderText = "PartName";
+            this.PartName.Name = "PartName";
+            this.PartName.Width = 200;
             // 
-            // textBox2
+            // BatchNumber
             // 
-            this.textBox2.Location = new System.Drawing.Point(289, 30);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(144, 20);
-            this.textBox2.TabIndex = 2;
+            this.BatchNumber.DataPropertyName = "BatchNumber";
+            this.BatchNumber.HeaderText = "BatchNumber";
+            this.BatchNumber.Name = "BatchNumber";
+            this.BatchNumber.Width = 200;
             // 
-            // comboBox3
+            // Amount
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(90, 27);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(96, 21);
-            this.comboBox3.TabIndex = 1;
+            this.Amount.DataPropertyName = "Amount";
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            // 
+            // btnAddList
+            // 
+            this.btnAddList.Location = new System.Drawing.Point(619, 27);
+            this.btnAddList.Name = "btnAddList";
+            this.btnAddList.Size = new System.Drawing.Size(91, 23);
+            this.btnAddList.TabIndex = 3;
+            this.btnAddList.Text = "Add to list";
+            this.btnAddList.UseVisualStyleBackColor = true;
+            this.btnAddList.Click += new System.EventHandler(this.btnAddList_Click);
+            // 
+            // txtAmount
+            // 
+            this.txtAmount.Location = new System.Drawing.Point(514, 30);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(85, 20);
+            this.txtAmount.TabIndex = 2;
+            // 
+            // txtBatch
+            // 
+            this.txtBatch.Location = new System.Drawing.Point(289, 30);
+            this.txtBatch.Name = "txtBatch";
+            this.txtBatch.Size = new System.Drawing.Size(144, 20);
+            this.txtBatch.TabIndex = 2;
+            // 
+            // cboPartName
+            // 
+            this.cboPartName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPartName.FormattingEnabled = true;
+            this.cboPartName.Location = new System.Drawing.Point(90, 27);
+            this.cboPartName.Name = "cboPartName";
+            this.cboPartName.Size = new System.Drawing.Size(96, 21);
+            this.cboPartName.TabIndex = 1;
             // 
             // label6
             // 
@@ -180,52 +209,55 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Part Name";
             // 
-            // button2
+            // btnSubmit
             // 
-            this.button2.Location = new System.Drawing.Point(234, 346);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Submit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSubmit.Location = new System.Drawing.Point(234, 346);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.TabIndex = 5;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // button3
+            // btnCancel
             // 
-            this.button3.Location = new System.Drawing.Point(419, 346);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Cancel";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnCancel.Location = new System.Drawing.Point(419, 346);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 5;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // dataGridView1
+            // dateTimePicker1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 66);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(691, 125);
-            this.dataGridView1.TabIndex = 4;
+            this.dateTimePicker1.Enabled = false;
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(73, 88);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(84, 20);
+            this.dateTimePicker1.TabIndex = 6;
             // 
             // frmPurchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 381);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(741, 381);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Enabled = false;
+            this.Controls.Add(this.cboWareHouse);
+            this.Controls.Add(this.cbSupply);
             this.Name = "frmPurchase";
             this.Text = "frmPurchase";
+            this.Load += new System.EventHandler(this.frmPurchase_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGird)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,24 +265,27 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbSupply;
+        private System.Windows.Forms.ComboBox cboWareHouse;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Button btnAddList;
+        private System.Windows.Forms.TextBox txtAmount;
+        private System.Windows.Forms.TextBox txtBatch;
+        private System.Windows.Forms.ComboBox cboPartName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.DataGridView dataGird;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PartName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BatchNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
     }
 }

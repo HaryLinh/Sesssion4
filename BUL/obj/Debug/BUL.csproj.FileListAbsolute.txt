@@ -1,0 +1,16 @@
+C:\Users\Linh\Desktop\pro_session04\BUL\bin\Debug\BUL.exe.config
+C:\Users\Linh\Desktop\pro_session04\BUL\bin\Debug\BUL.exe
+C:\Users\Linh\Desktop\pro_session04\BUL\bin\Debug\BUL.pdb
+C:\Users\Linh\Desktop\pro_session04\BUL\obj\Debug\BUL.csprojAssemblyReference.cache
+C:\Users\Linh\Desktop\pro_session04\BUL\obj\Debug\BUL.Properties.Resources.resources
+C:\Users\Linh\Desktop\pro_session04\BUL\obj\Debug\BUL.csproj.GenerateResource.cache
+C:\Users\Linh\Desktop\pro_session04\BUL\obj\Debug\BUL.csproj.CoreCompileInputs.cache
+C:\Users\Linh\Desktop\pro_session04\BUL\obj\Debug\BUL.exe
+C:\Users\Linh\Desktop\pro_session04\BUL\obj\Debug\BUL.pdb
+C:\Users\Linh\Desktop\pro_session04\BUL\bin\Debug\DAL.exe
+C:\Users\Linh\Desktop\pro_session04\BUL\bin\Debug\DAL.pdb
+C:\Users\Linh\Desktop\pro_session04\BUL\bin\Debug\DAL.exe.config
+C:\Users\Linh\Desktop\pro_session04\BUL\obj\Debug\BUL.csproj.CopyComplete
+C:\Users\Linh\Desktop\pro_session04\BUL\bin\Debug\DTO.exe
+C:\Users\Linh\Desktop\pro_session04\BUL\bin\Debug\DTO.pdb
+C:\Users\Linh\Desktop\pro_session04\BUL\bin\Debug\DTO.exe.config
