@@ -29,9 +29,18 @@ namespace DAL
                     }
                 }
             }
-            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            SqlDataReader sqlDataReader;
             DataTable dataTable = new DataTable();
-            dataTable.Load(sqlDataReader);
+            try
+            {
+                sqlDataReader = sqlCommand.ExecuteReader();
+    
+                dataTable.Load(sqlDataReader);
+            }
+            catch(Exception e)
+            {
+
+            }
             conn.Close();
             return dataTable;
         }

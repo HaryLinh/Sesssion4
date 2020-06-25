@@ -11,7 +11,7 @@ namespace BUL
 {
     public class OrderItemBUL
     {
-        public bool InsertOrderItem(int OrderID, int PartID, string BatchNumber, int Amount)
+        public bool InsertOrderItem(int OrderID, int PartID, string BatchNumber, double Amount)
         {
             return new OrderItemDAL().InsertOrderItem(OrderID, PartID, BatchNumber, Amount);
         }
@@ -40,7 +40,7 @@ namespace BUL
         {
             data = new OrderItemDAL().GetByPartAndBath(PartID, Bath);
         }
-        public bool UpdateAmount(int Amount, int OrderItemID)
+        public bool UpdateAmount(double Amount, int OrderItemID)
         {
             return new OrderItemDAL().UpdateAmount(Amount, OrderItemID);
         }

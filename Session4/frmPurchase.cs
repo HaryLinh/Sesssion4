@@ -66,7 +66,7 @@ namespace Session4
 
         private void btnAddList_Click(object sender, EventArgs e)
         {
-            if (cboPartName.SelectedIndex < 0 || txtAmount.Text == "" || !CheckAmount())
+            if (cboPartName.SelectedIndex < 0 || txtAmount.Text == "")
             {
                 MessageBox.Show("Please choose and fill information and amount is a number");
             }
@@ -74,7 +74,7 @@ namespace Session4
             {
                 string exp = "PartName = '" + cboPartName.Text + "' AND BatchNumber = '"+ txtBatch.Text +"'";
                 int ID = int.Parse(cboPartName.SelectedValue.ToString());
-                int Amount = int.Parse(txtAmount.Text.ToString());
+                double Amount = double.Parse(txtAmount.Text.ToString());
                 bool checkPartRequire = partBUL.CheckHasRequire(ID);
                 if (checkPartRequire && txtBatch.Text == "")
                 {
@@ -119,7 +119,7 @@ namespace Session4
                             Amount = (int)hashPart[ID];
                         }
                         int index = data.Rows.IndexOf(dr[0]);
-                        if (CheckAmount(ID, int.Parse(data.Rows[index]["Amount"].ToString()) + Amount))
+                        if (CheckAmount(ID, double.Parse(data.Rows[index]["Amount"].ToString()) + Amount))
                         {
                             if (hashPart.ContainsKey(ID))
                             {
@@ -142,7 +142,7 @@ namespace Session4
             DataTable data = new DataTable();
             data.Columns.Add("PartName", typeof(string));
             data.Columns.Add("BatchNumber", typeof(string));
-            data.Columns.Add("Amount", typeof(int));
+            data.Columns.Add("Amount", typeof(double));
             data.Columns.Add("PartID", typeof(int));
             return data;
         }
@@ -187,7 +187,7 @@ namespace Session4
                 data.AcceptChanges();
             }
         }
-        private bool CheckAmount(int ID, int Amount)
+        private bool CheckAmount(int ID, double Amount)
         {
             bool check = false;
             int MiniumAmount = partBUL.GetAmountByID(ID);
@@ -201,8 +201,8 @@ namespace Session4
             foreach (DataRow row in data.Rows)
             {
                 int PartID = int.Parse(row["PartID"].ToString());
-                int Amount = int.Parse(row["Amount"].ToString());
-                int MiniumAmount = partBUL.GetAmountByID(PartID);
+                double Amount = double.Parse(row["Amount"].ToString());
+                double MiniumAmount = partBUL.GetAmountByID(PartID);
                 partBUL.UpdateAmount(MiniumAmount - Amount, PartID);
             }
         }
@@ -222,7 +222,7 @@ namespace Session4
             {
                 int PartID = int.Parse(row["PartID"].ToString());
                 string BatchNumber = row["BatchNumber"].ToString();
-                int Amount = int.Parse(row["Amount"].ToString());
+                double Amount = double.Parse(row["Amount"].ToString());
                 try
                 {
                     orderItemBUL.InsertOrderItem(OrderID, PartID, BatchNumber, Amount);

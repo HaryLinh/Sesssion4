@@ -149,7 +149,9 @@ namespace Session4
 
         private void inventoryReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            frmIventoryReport purchase = new frmIventoryReport();
+            purchase.ShowDialog();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void purchaseOrderManagementToolStripMenuItem_Click(object sender, EventArgs e)

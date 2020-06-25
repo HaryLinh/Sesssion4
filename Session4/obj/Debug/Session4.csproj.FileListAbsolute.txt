@@ -35,3 +35,4 @@ C:\Users\Linh\Desktop\pro_session04\Session4\obj\Debug\Session4.frmEditIventory.
 C:\Users\Linh\Desktop\pro_session04\Session4\bin\Debug\DTO.exe
 C:\Users\Linh\Desktop\pro_session04\Session4\bin\Debug\DTO.pdb
 C:\Users\Linh\Desktop\pro_session04\Session4\bin\Debug\DTO.exe.config
+C:\Users\Linh\Desktop\pro_session04\Session4\obj\Debug\Session4.ViewBatch.resources

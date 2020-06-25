@@ -79,6 +79,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewBatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewBatch.Designer.cs">
+      <DependentUpon>ViewBatch.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmEditIventory.resx">
       <DependentUpon>frmEditIventory.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +110,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ViewBatch.resx">
+      <DependentUpon>ViewBatch.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -48,7 +48,7 @@ namespace Session4
             int PartID = int.Parse(row["PartID"].ToString());
             string BathNumber = row["BathNumber"].ToString();
             int TotalAmount = int.Parse(row["Amount"].ToString());
-            if (cboPartName.SelectedIndex < 0 || txtAmount.Text == "" || !CheckAmountValid())
+            if (cboPartName.SelectedIndex < 0 || txtAmount.Text == "")
             {
                 MessageBox.Show("Please choose and fill information and amount is a number");
             }
@@ -56,7 +56,7 @@ namespace Session4
             {
                 string exp = "PartName = '" + cboPartName.Text + "' AND BatchNumber = '" + cbbBatch.Text + "'";
                 int ID = int.Parse(cboPartName.SelectedValue.ToString());
-                int Amount = int.Parse(txtAmount.Text.ToString());
+                double Amount = double.Parse(txtAmount.Text.ToString());
                 bool checkPartRequire = partBUL.CheckHasRequire(ID);
                 if (checkPartRequire && cbbBatch.SelectedIndex == -1)
                 {
@@ -145,7 +145,7 @@ namespace Session4
             DataTable data = new DataTable();
             data.Columns.Add("PartName", typeof(string));
             data.Columns.Add("BatchNumber", typeof(string));
-            data.Columns.Add("Amount", typeof(int));
+            data.Columns.Add("Amount", typeof(double));
             data.Columns.Add("OrderItemID", typeof(int));
             data.Columns.Add("PartID", typeof(int));
             data.Columns.Add("AmountOrigin", typeof(int));
@@ -178,7 +178,7 @@ namespace Session4
             txtAmount.Text = "";
             data.Clear();
         }
-        private bool CheckAmount(int Amount, int TotalAmount)
+        private bool CheckAmount(double Amount, int TotalAmount)
         {
             bool check = false;
             if (Amount <= TotalAmount)
@@ -191,7 +191,7 @@ namespace Session4
             foreach (DataRow row in data.Rows)
             {
                 int OrderItemID = int.Parse(row["OrderItemID"].ToString());
-                int Amount = int.Parse(row["Amount"].ToString());
+                double Amount = double.Parse(row["Amount"].ToString());
                 int AmountOrigin = int.Parse(row["AmountOrigin"].ToString());
                 orderItemBUL.UpdateAmount(AmountOrigin - Amount, OrderItemID);
             }
@@ -212,7 +212,7 @@ namespace Session4
             {
                 int PartID = int.Parse(row["PartID"].ToString());
                 string BatchNumber = row["BatchNumber"].ToString();
-                int Amount = int.Parse(row["Amount"].ToString());
+                double Amount = double.Parse(row["Amount"].ToString());
                 try
                 {
                     orderItemBUL.InsertOrderItem(OrderID, PartID, BatchNumber, Amount);
@@ -232,7 +232,6 @@ namespace Session4
             {
                 if (InsertOrder() && InsertAllOrderItem())
                 {
-                    UpdateAmount();
                     MessageBox.Show("Order successfully!");
                     ClearField();
                 }

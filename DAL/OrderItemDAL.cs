@@ -11,7 +11,7 @@ namespace DAL
 {
     public class OrderItemDAL
     {
-        public bool InsertOrderItem(int OrderID, int PartID, string BatchNumber, int Amount)
+        public bool InsertOrderItem(int OrderID, int PartID, string BatchNumber, double Amount)
         {
             string sql = "Insert into OrderItems values( @OrderID , @PartID , @BatchNumber , @Amount )";
             bool c = Utility.ExecuteNonQuery(sql, new object[] { OrderID, PartID, BatchNumber, Amount });
@@ -47,10 +47,10 @@ namespace DAL
         }
         public DataTable GetByPartAndBath(int PartID, string Bath)
         {
-            string sql = "select o.ID, o.OrderID, o.PartID, o.BathNumber, o.Amount from OrderItems o inner join Orders od on o.OrderID = od.ID where o.PartID = @PartID and o.BathNumber = @Batch and od.TranSactionID = 1 ";
+            string sql = "select o.ID, o.OrderID, o.PartID, o.BathNumber, o.Amount from OrderItems o inner join Orders od on o.OrderID = od.ID where o.PartID = @PartID and o.BathNumber = @Batch ";
             return Utility.ExecuteDataReader(sql, new object[] { PartID, Bath });
         }
-        public bool UpdateAmount(int  Amount, int OrderItemID)
+        public bool UpdateAmount(double  Amount, int OrderItemID)
         {
             string sql = "Update OrderItems set Amount = @Amount where ID = @OrderItemID";
             return Utility.ExecuteNonQuery(sql, new object[] { Amount, OrderItemID });

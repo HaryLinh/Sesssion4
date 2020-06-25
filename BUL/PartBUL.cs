@@ -25,7 +25,7 @@ namespace BUL
         {
             return new PartDAL().GetAmountByID(ID);
         }
-        public bool UpdateAmount(int Amount , int ID)
+        public bool UpdateAmount(double Amount , int ID)
         {
             return new PartDAL().UpdateAmount(Amount, ID);
         }

@@ -29,7 +29,7 @@ namespace DAL
             return ListParts;
         }
         
-        public bool UpdateAmount (int Amount, int ID)
+        public bool UpdateAmount (double Amount, int ID)
         {
             string sql = "Update PARTS SET MinimumAmount = @MinimumAmount where ID = @ID";
             return Utility.ExecuteNonQuery(sql, new object[] { Amount, ID});
